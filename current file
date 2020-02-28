@@ -1,0 +1,45 @@
+class Solution:
+    def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:
+        if beginWord !=None and endWord !=None and beginWord !=endWord:
+            if endWord not in wordList:
+                return []
+            wdmp=self.mapwords(beginword, wordList)
+            ky=wdmp.keys()
+            vl=wdmp.values()
+            for i in keys:
+                opt=[i]
+                opt.append(wdmp[i][-1])
+                wdmp[i][-1].pop()
+      
+    def mapwords(self, bgw, wdl):
+        self.bgw=bgw
+        self.wd1=wd1
+        wordsmap={}
+        lst=[]
+        for i in wdl:
+            lst.append(self.wordmatch(bgw, i))
+        wordsmap[bgw]=lst
+        for i in range(len(wdl)-2):
+            opt=[]
+            for j in range(i+1, len(wdl)-1, 1):
+                opt.append(self.wordmatch(wdl[i], wdl[j]))
+            wordsmap[wdl[i]]=opt
+        return wordsmap          
+           
+    def wordmatch(self, w1, w2):
+        self.w1=w1
+        self.w2=w2
+        word2num=[]
+        if len(w1)==len(w2):
+            for i in range(len(w1)-1):
+                if w1[i]==w2[i]:
+                    word2num.append(0)
+                else:
+                    word2num.append(1)
+            w2n_sum=sum(word2num)
+            if w2n_sum==1:
+                return w2
+      
+        
+        
+            
